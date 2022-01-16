@@ -1,6 +1,18 @@
 <resources>
-    <string name="app_name">com.pacenow.exam</string>
+    <string name="app_name">Pace</string>
     <string name="dismiss">Dismiss</string>
 
     <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="logout">Logout</string>
+
+    <string name="login_password_error">Password must be not less than 8 characters.</string>
+    <string name="login_email_error">Invalid email address</string>
+    <string name="login_failed_error">Login failed.</string>
+    <string name="settings">Settings</string>
+    <string name="selection_exceeded_error">Selected items exceeded.</string>
 </resources>

@@ -13,6 +13,6 @@ interface UserDao : BaseRoomDao<User> {
     @Query("SELECT * FROM user WHERE id = :id")
     suspend fun find(id: Int): User?
 
-    @Query("SELECT * FROM user WHERE user_name = :userName")
-    suspend fun getCityByName(userName: String): User?
+    @Query("SELECT * FROM user WHERE user_name == :email")
+    suspend fun findUser(email: String): User?
 }

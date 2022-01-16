@@ -7,7 +7,8 @@ import com.pacenow.exam.core.room.entities.User
 class UserRepository(
     private val userDao: UserDao
 ) : BaseRoomRepository<User, UserDao>(userDao) {
-    override suspend fun findAll(): List<User> = userDao.findAll()
-    override suspend fun find(id: Int) = userDao.find(id)
-    suspend fun getCityByName(name: String) = userDao.getCityByName(name)
+
+    suspend fun findAll() = userDao.findAll()
+    suspend fun find(id: Int) = userDao.find(id)
+    suspend fun findUser(email: String) = userDao.findUser(email)
 }

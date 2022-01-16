@@ -4,14 +4,17 @@ import android.content.Context
 import androidx.startup.AppInitializer
 import androidx.startup.Initializer
 import com.pacenow.exam.core.initializers.room.RoomDatabaseInitializer
-import com.pacenow.exam.core.room.daos.UserDao
+import com.pacenow.exam.core.room.base.BaseRoomDao
 
-class RoomUserRepositoryInitializer : Initializer<UserDao> {
+class RoomRepositoriesInitializer : Initializer<List<BaseRoomDao<*>>> {
 
-    override fun create(context: Context): UserDao {
+    override fun create(context: Context): List<BaseRoomDao<*>> {
         val appDatabase = AppInitializer.getInstance(context)
             .initializeComponent(RoomDatabaseInitializer::class.java)
-        return appDatabase.userDao()
+        return listOf(
+            appDatabase.userDao(),
+            appDatabase.countryDao()
+        )
     }
 
     override fun dependencies() = listOf(RoomDatabaseInitializer::class.java)

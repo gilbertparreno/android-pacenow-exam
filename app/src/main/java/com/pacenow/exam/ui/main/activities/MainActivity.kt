@@ -6,7 +6,7 @@ import com.pacenow.exam.R
 import com.pacenow.exam.core.base.BaseActivity
 import com.pacenow.exam.core.extensions.addFragment
 import com.pacenow.exam.core.extensions.getFragmentTag
-import com.pacenow.exam.ui.main.fragments.MainFragment
+import com.pacenow.exam.ui.main.fragments.MainPagerFragment
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
@@ -21,11 +21,11 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
                 beginTransaction()
                     .addFragment(
                         containerId = R.id.mainContainer,
-                        fragmentClass = MainFragment::class.java,
+                        fragmentClass = MainPagerFragment::class.java,
                         addToBackStack = false
                     ).commit()
             }
-            rootFragmentTag = getFragmentTag(MainFragment::class.java)
+            rootFragmentTag = getFragmentTag(MainPagerFragment::class.java)
         }
     }
 }
